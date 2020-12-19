@@ -1,5 +1,5 @@
 # mosquitto-1.6.7-send_connect_status
-二次开发mosquitto 1.6.7，新增了一个小特性，在客户端在线离线时，发送一个消息到特定的客户端、实时监听客户端在线离线状态.
+二次开发mosquitto 1.6.7，新增了一个小特性，在客户端在线，离线时，发送一个消息到特定的客户端、实时监听客户端在线离线状态.
 ## 1. 安装uthash 
 
 git clone https://github.com/troydhanson/uthash
@@ -40,7 +40,7 @@ make install
 
 vim /etc/mosquitto/mosquitto.conf
 
-再配置文件末尾新增如下配置项
+在配置文件末尾新增如下配置项
 
 topic_notice_online client/online #设备上线发送json消息到topic
 
@@ -84,7 +84,7 @@ mosquitto_sub -h xxx  -p 1883 -u xxx -P xxx -t client/ofline
 消息体
 
 ```
-{"clientid", "CLIENT_PREFIX:APP:XXX:timestamp", "type", "1", "time", "1608363225753"}
+{"id", "CLIENT_PREFIX:APP:XXX:timestamp", "s", "1", "t", "1608363225753"}
 
 ```
 
