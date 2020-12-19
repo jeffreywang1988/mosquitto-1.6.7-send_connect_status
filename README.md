@@ -2,7 +2,7 @@
 二次开发mosquitto 1.6.7，新增了一个小特性，在客户端在线离线时，发送一个消息到特定的客户端、实时监听客户端在线离线状态.
 ## 1. 安装uthash 
 
-git clone *https://github.com/troydhanson/uthash
+git clone https://github.com/troydhanson/uthash
 
 cd uthash
 
@@ -12,7 +12,7 @@ ldconfig
 
 ## 2.安装websocket
 
-git clone *https://github.com/imanel/libwebsocket
+git clone https://github.com/imanel/libwebsocket
 
 mkdir build 
 
@@ -28,7 +28,7 @@ ldconfig
 
 ## 3. 安装mosquitto
 
-git clone *https://github.com/jeffreywang1988/mosquitto-1.6.7-send_connect_status
+git clone https://github.com/jeffreywang1988/mosquitto-1.6.7-send_connect_status
 
 make clean
 
@@ -90,13 +90,13 @@ mosquitto_sub -h xxx  -p 1883 -u xxx -P xxx -t client/ofline
 
 ## 引用
 
-参考项目 *https://github.com/eclipse/mosquitto/tree/1.6.x
+参考项目 https://github.com/eclipse/mosquitto/tree/1.6.x
 
-参考项目 *https://github.com/houjixin/mosquitto-1.4.11-opt
+参考项目 https://github.com/houjixin/mosquitto-1.4.11-opt
 
 ## 联系方式
 
- yuzhoumeigui@qq.com
+邮箱 yuzhoumeigui@qq.com
  
- https://www.cnblogs.com/yuzhoumeigui
+博客 https://www.cnblogs.com/yuzhoumeigui
  
