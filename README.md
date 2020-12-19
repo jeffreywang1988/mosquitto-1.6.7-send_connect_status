@@ -1,29 +1,51 @@
 # mosquitto-1.6.7-send_connect_status
 二次开发mosquitto 1.6.7，新增了一个小特性，在客户端在线离线时，发送一个消息到特定的客户端、实时监听客户端在线离线状态.
 ## 1. 安装uthash 
-git clone * https://github.com/troydhanson/uthash
+
+git clone *https://github.com/troydhanson/uthash
+
 cd uthash
+
 mv ./include/* /usr/include
+
 ## 2.安装websocket
-git clone * https://github.com/imanel/libwebsocket
+
+git clone *https://github.com/imanel/libwebsocket
+
 mkdir build 
+
 cd build
+
 cmake ..
+
 make
+
 make install
+
 ## 3. 安装mosquitto
-make clean && make && make install
+
+make clean
+
+make 
+
+make install
+
 ## 4. mosquitto 项目配置
 vim /etc/mosquitto/mosquitto.conf
 
 topic_notice_online client/online
+
 topic_notice_offline client/offline
+
 topic_notice_prefix CLIENT_PREIX
+
 
 ## 5. 配置系统系统命令
 
+
 vim /etc/lib/systemd/system/mosquitto.service
 
+```
 [Unit]
 Description=Mosquitto MQTT v3.1/v3.1.1 Broker
 Documentation=man:mosquitto.conf(5) man:mosquitto(8)
@@ -38,5 +60,6 @@ LimitNOFILE=65535 #重要，mosquitto可以打开的文件句柄数
 WantedBy=multi-user.target
 systemctl enable mosquitto.service
 systemctl start mosquitto.service
-
-参考逍遥子的项目 * https://github.com/houjixin/mosquitto-1.4.11-opt
+```
+## 引用
+参考逍遥子的项目 *https://github.com/houjixin/mosquitto-1.4.11-opt
