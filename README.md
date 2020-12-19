@@ -8,6 +8,8 @@ cd uthash
 
 mv ./include/* /usr/include
 
+ldconfig
+
 ## 2.安装websocket
 
 git clone *https://github.com/imanel/libwebsocket
@@ -22,7 +24,11 @@ make
 
 make install
 
+ldconfig
+
 ## 3. 安装mosquitto
+
+git clone *https://github.com/jeffreywang1988/mosquitto-1.6.7-send_connect_status
 
 make clean
 
@@ -31,6 +37,7 @@ make
 make install
 
 ## 4. mosquitto 项目配置
+
 vim /etc/mosquitto/mosquitto.conf
 
 topic_notice_online client/online
@@ -39,9 +46,7 @@ topic_notice_offline client/offline
 
 topic_notice_prefix CLIENT_PREIX
 
-
 ## 5. 配置系统系统命令
-
 
 vim /etc/lib/systemd/system/mosquitto.service
 
@@ -58,8 +63,13 @@ User=mosquitto
 LimitNOFILE=65535 #重要，mosquitto可以打开的文件句柄数
 [Install]
 WantedBy=multi-user.target
-systemctl enable mosquitto.service
-systemctl start mosquitto.service
 ```
+systemctl enable mosquitto.service
+
+systemctl start mosquitto.service
+
 ## 引用
-参考逍遥子的项目 *https://github.com/houjixin/mosquitto-1.4.11-opt
+
+参考项目 *https://github.com/eclipse/mosquitto
+
+参考项目 *https://github.com/houjixin/mosquitto-1.4.11-opt
