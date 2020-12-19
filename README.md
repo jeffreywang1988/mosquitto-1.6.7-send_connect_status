@@ -94,9 +94,4 @@ mosquitto_sub -h xxx  -p 1883 -u xxx -P xxx -t client/ofline
 
 参考项目 https://github.com/houjixin/mosquitto-1.4.11-opt
 
-## 联系方式
-
-邮箱 yuzhoumeigui@qq.com
- 
-博客 https://www.cnblogs.com/yuzhoumeigui
  
