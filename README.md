@@ -70,6 +70,13 @@ systemctl start mosquitto.service
 
 ## 引用
 
-参考项目 *https://github.com/eclipse/mosquitto
+参考项目 *https://github.com/eclipse/mosquitto/tree/1.6.x
 
 参考项目 *https://github.com/houjixin/mosquitto-1.4.11-opt
+
+## 联系方式
+
+ yuzhoumeigui@qq.com
+ 
+ https://www.cnblogs.com/yuzhoumeigui
+ 
