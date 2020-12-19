@@ -40,11 +40,13 @@ make install
 
 vim /etc/mosquitto/mosquitto.conf
 
-topic_notice_online client/online
+再配置文件末尾新增如下配置项
 
-topic_notice_offline client/offline
+topic_notice_online client/online #设备上线发送json消息到topic
 
-topic_notice_prefix CLIENT_PREIX
+topic_notice_offline client/offline #设备离线发送消息到topic
+
+topic_notice_prefix CLIENT_PREIX #处理客户端id为 CLIEN_PREFIX前缀的客户端
 
 ## 5. 配置系统系统命令
 
@@ -67,6 +69,24 @@ WantedBy=multi-user.target
 systemctl enable mosquitto.service
 
 systemctl start mosquitto.service
+
+## 6. example 
+
+订阅在线
+
+
+mosquitto_sub -h xxx  -p 1883 -u xxx -P xxx -t client/online
+
+订阅离线
+
+mosquitto_sub -h xxx  -p 1883 -u xxx -P xxx -t client/ofline
+
+消息体
+
+```
+{"clientid", "CLIENT_PREFIX:APP:XXX:timestamp", "type", "1", "time", "1608363225753"}
+
+```
 
 ## 引用
 
