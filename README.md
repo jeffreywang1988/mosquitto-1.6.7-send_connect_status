@@ -48,7 +48,7 @@ topic_notice_offline client/offline #设备离线发送消息到topic
 
 topic_notice_prefix CLIENT_PREIX #处理客户端id为 CLIEN_PREFIX前缀的客户端
 
-## 5. 配置系统系统命令
+## 5. 配置系统命令
 
 vim /etc/lib/systemd/system/mosquitto.service
 
