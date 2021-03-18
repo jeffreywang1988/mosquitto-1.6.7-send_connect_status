@@ -65,6 +65,9 @@ User=mosquitto
 LimitNOFILE=65535 #重要，mosquitto可以打开的文件句柄数
 [Install]
 WantedBy=multi-user.target
+StartLimitIntervalSec=0
+Restart=always
+RestartSec=1
 ```
 systemctl enable mosquitto.service
 
